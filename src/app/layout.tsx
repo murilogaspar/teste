@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Menu } from "lucide-react";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +29,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="flex">
+          <div className="fixed top-0 left-0 h-screen w-64 bg-blue-950 flex flex-col items-center justify-start space-y-3 p-4 ">
+            <h2 className="text-amber-50 font-semibold font-style: italic text-center"> Murilo  Gaspar </h2>
+            <h3 className="text-amber-50 font-semibold font-style: italic text-center"> Telefone: (xx) xxxxx-xxxx </h3>
+            <h3 className="text-amber-50 font-semibold font-style: italic text-center"> Email: fulano@gmail.com </h3>
+            <h3 className="text-amber-50 font-semibold font-style: italic text-center"> Linkedin: @fulano.deltrano </h3>
+        </div>
+       
+      </div>
+        
         {children}
       </body>
     </html>
