@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Menu } from "lucide-react";
+import { Icon, LinkIcon, MailIcon, Menu, PhoneIcon } from "lucide-react";
+import SvgIcon from "@mui/icons-material/Abc";
+import { Email } from "@mui/icons-material";
+
 
 
 const geistSans = Geist({
@@ -29,16 +32,36 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex">
+        {/* Imagem + dados lado a lado */}
+        
+          <div className="flex">
           <div className="fixed top-0 left-0 h-screen w-64 bg-blue-950 flex flex-col items-center justify-start space-y-3 p-4 ">
-            <h2 className="text-amber-50 font-semibold font-style: italic text-center"> Murilo  Gaspar </h2>
-            <h3 className="text-amber-50 font-semibold font-style: italic text-center"> Telefone: (xx) xxxxx-xxxx </h3>
-            <h3 className="text-amber-50 font-semibold font-style: italic text-center"> Email: fulano@gmail.com </h3>
-            <h3 className="text-amber-50 font-semibold font-style: italic text-center"> Linkedin: @fulano.deltrano </h3>
+          <div className="w-32 h-32 rounded-full bg-gray-100 border border-gray-300 shadow-sm flex items-center justify-center overflow-hidden">
+                <img
+                src="/icon/fulano.svg"
+                alt="Ícone do usuário"
+                className="w-25 h-  object-cover rounded-full"
+                />
+                </div>
+                
+            <h2 className="text-amber-50 font-semibold font-style: italic text-center"> Murilo Fernando Cunha Gaspar </h2>
+            <div className="flex items-center gap-2">
+                <PhoneIcon className="w-5 h-5 text-amber-50" />
+                  <h3 className="text-amber-50 font-semibold italic text-center">
+                    Telefone: (xx) xxxxx-xxxx
+                  </h3>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <MailIcon className="w-5 h-5 text-amber-50" />
+                  <h3 className="text-amber-50 font-semibold italic text-center">
+                    Email: fulano@gmail.com
+                  </h3>
+              </div>
+
         </div>
        
       </div>
-        
         {children}
       </body>
     </html>
